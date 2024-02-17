@@ -1,0 +1,35 @@
+{
+    "name": "twitter-scam-block",
+    "private": true,
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview",
+        "format": "prettier --check --ignore-path .gitignore .",
+        "format:fix": "prettier --write --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^7.0.1",
+        "eslint-plugin-react": "^7.33.2",
+        "husky": "^9.0.11",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "webextension-polyfill": "^0.10.0"
+    },
+    "devDependencies": {
+        "@crxjs/vite-plugin": "^1.0.14",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "@vitejs/plugin-react": "^1.3.0",
+        "autoprefixer": "^10.4.17",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "postcss": "^8.4.35",
+        "prettier": "^3.2.5",
+        "prettier-plugin-tailwindcss": "^0.5.11",
+        "tailwindcss": "^3.4.1",
+        "typescript": "^4.6.3",
+        "vite": "^2.9.15"
+    }
+}
