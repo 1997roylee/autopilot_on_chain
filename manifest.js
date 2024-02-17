@@ -15,6 +15,9 @@ const manifest = {
     background: {
         service_worker: 'src/apps/background/index.ts',
     },
+    icons: {
+        128: 'icon-128.png',
+      },
     content_scripts: [
         {
             matches: ['*://*.x.com/*', '*://*.twitter.com/*'],
