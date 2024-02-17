@@ -7,8 +7,9 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/recommended",
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/recommended',
+        'plugin:jsx-a11y/recommended',
         'prettier',
     ],
     overrides: [],
@@ -20,6 +21,7 @@ module.exports = {
     plugins: ['react'],
     rules: {
         'react/react-in-jsx-scope': 'off',
+        'import/no-unresolved': 'off',
     },
     ignorePatterns: ['**/*.svg'],
 };
