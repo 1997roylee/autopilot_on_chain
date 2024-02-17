@@ -9,8 +9,7 @@ function findSpanInNode(
         const child = node.childNodes[i];
         if (
             child.nodeType === 1 &&
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            (child as any).tagName === 'SPAN' &&
+            (child as Element).tagName === 'SPAN' &&
             child.textContent === text
         ) {
             return child;
@@ -24,14 +23,13 @@ function findSpanInNode(
     return null;
 }
 
-console.log('injected ad-block script');
-
 waitForElements('div[data-testid="cellInnerDiv"]', (nodes) => {
-    console.log('nodes', nodes);
     nodes.forEach((node) => {
         const span = findSpanInNode(node, 'Ad');
         if (span) {
-            return (node.className = `${node.className} tweet-block`);
+            const child = node.firstChild as Element;
+
+            return (child.className = `${child.className} block`);
         }
     });
 });
