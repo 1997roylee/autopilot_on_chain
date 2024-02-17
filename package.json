@@ -8,7 +8,8 @@
         "preview": "vite preview",
         "format": "prettier --check --ignore-path .gitignore .",
         "format:fix": "prettier --write --ignore-path .gitignore .",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "lint": "eslint . --ext .ts,.tsx"
     },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^7.0.1",
@@ -26,6 +27,7 @@
         "autoprefixer": "^10.4.17",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
         "postcss": "^8.4.35",
         "prettier": "^3.2.5",
         "prettier-plugin-tailwindcss": "^0.5.11",

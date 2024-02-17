@@ -7,9 +7,9 @@ function findSpanInNode(
 ): ChildNode | null {
     for (let i = 0; i < node.childNodes.length; i++) {
         const child = node.childNodes[i];
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         if (
             child.nodeType === 1 &&
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             (child as any).tagName === 'SPAN' &&
             child.textContent === text
         ) {

@@ -24,4 +24,9 @@ module.exports = {
         'import/no-unresolved': 'off',
     },
     ignorePatterns: ['**/*.svg'],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
 };

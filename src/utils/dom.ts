@@ -7,10 +7,9 @@ export async function waitForElements(
             const nodes = Array.from(mutation.addedNodes);
             const matches = nodes.filter((node) => {
                 if (node.nodeType == Node.ELEMENT_NODE)
-                    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-explicit-any
                     return (
-                        !!(node as any).matches &&
-                        (node as any).matches(selector)
+                        !!(node as Element).matches &&
+                        (node as Element).matches(selector)
                     );
             });
             if (matches.length > 0) {
