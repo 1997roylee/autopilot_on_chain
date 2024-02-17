@@ -1,0 +1,41 @@
+---
+name: 'release'
+
+on:
+    push:
+        tags:
+            - 'v*'
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: yarn install
+            - run: yarn lint
+
+    pre-release:
+        needs: [lint]
+        name: 'Pre Release'
+        runs-on: 'ubuntu-latest'
+
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 16.17
+            - run: yarn install
+            - run: yarn build
+            - run: mv dist twitter-ad-scam-block
+
+            - uses: montudor/action-zip@v1
+              with:
+                  args: zip -qq -r twitter-ad-scam-block.zip twitter-ad-scam-block
+
+            - uses: 'marvinpinto/action-automatic-releases@latest'
+              with:
+                  repo_token: '${{ secrets.GITHUB_TOKEN }}'
+                  prerelease: false
+                  # title: "Development Build"
+                  files: |
+                      twitter-ad-scam-block.zip
