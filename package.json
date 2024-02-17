@@ -7,7 +7,8 @@
         "build": "tsc && vite build",
         "preview": "vite preview",
         "format": "prettier --check --ignore-path .gitignore .",
-        "format:fix": "prettier --write --ignore-path .gitignore ."
+        "format:fix": "prettier --write --ignore-path .gitignore .",
+        "prepare": "husky install"
     },
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^7.0.1",
